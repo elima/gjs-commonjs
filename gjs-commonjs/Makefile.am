@@ -68,7 +68,7 @@ introspection_sources = $(prj_HEADERS) $(source_c)
 @GIR_API_NAME@.gir: lib@PRJ_API_NAME@.la Makefile
 @GIR_TARGET_NAME@_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0
 @GIR_TARGET_NAME@_CFLAGS = $(INCLUDES) $(MOZJS_CFLAGS) $(GJS_CFLAGS)
-@GIR_TARGET_NAME@_LIBS = lib@PRJ_API_NAME@.la
+@GIR_TARGET_NAME@_LIBS = @PRJ_API_NAME@
 @GIR_TARGET_NAME@_FILES = $(addprefix $(srcdir)/,$(introspection_sources))
 
 INTROSPECTION_GIRS += @GIR_API_NAME@.gir
@@ -86,8 +86,7 @@ gjs_commonjs_CFLAGS = \
 	$(AM_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(MOZJS_CFLAGS) \
-	$(GJS_CFLAGS) \
-	-I .
+	$(GJS_CFLAGS)
 
 gjs_commonjs_LDADD = \
 	$(GLIB_LIBS) \
