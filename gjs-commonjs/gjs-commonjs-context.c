@@ -50,10 +50,6 @@ static void     gjs_commonjs_context_init               (GjsCommonjsContext *sel
 
 static void     gjs_commonjs_context_finalize           (GObject *obj);
 
-static void     gjs_commonjs_context_set_property       (GObject      *obj,
-                                                         guint         prop_id,
-                                                         const GValue *value,
-                                                         GParamSpec   *pspec);
 static void     gjs_commonjs_context_get_property       (GObject    *obj,
                                                          guint       prop_id,
                                                          GValue     *value,
@@ -66,7 +62,6 @@ gjs_commonjs_context_class_init (GjsCommonjsContextClass *class)
 
   obj_class->finalize = gjs_commonjs_context_finalize;
   obj_class->get_property = gjs_commonjs_context_get_property;
-  obj_class->set_property = gjs_commonjs_context_set_property;
 
   g_object_class_install_property (obj_class, PROP_CONTEXT,
                                    g_param_spec_object ("context",
@@ -114,24 +109,6 @@ gjs_commonjs_context_finalize (GObject *obj)
   g_object_unref (self->priv->context);
 
   G_OBJECT_CLASS (gjs_commonjs_context_parent_class)->finalize (obj);
-}
-
-static void
-gjs_commonjs_context_set_property (GObject      *obj,
-                          guint         prop_id,
-                          const GValue *value,
-                          GParamSpec   *pspec)
-{
-  //  GjsCommonjsContext *self;
-
-  //  self = GJS_COMMONJS_CONTEXT (obj);
-
-  switch (prop_id)
-    {
-    default:
-      G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
-      break;
-    }
 }
 
 static void
