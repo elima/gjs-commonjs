@@ -44,13 +44,11 @@ main (gint argc, gchar *argv[])
                                         &exit_status,
                                         &error))
     {
-      //      g_debug ("%s", error->message);
+      g_error ("%s", error->message);
       g_error_free (error);
     }
 
   g_object_unref (context);
-
-  g_debug ("clean exit!");
 
   return exit_status;
 }
