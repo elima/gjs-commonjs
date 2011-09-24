@@ -101,6 +101,7 @@ AC_OUTPUT([
         gjs-commonjs/Makefile
         gjs-commonjs/gjs-commonjs-0.1.pc
         js/Makefile
+        test/Makefile
 ])
 
 echo ""

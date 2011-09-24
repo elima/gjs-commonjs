@@ -1,10 +1,12 @@
 SUBDIRS = \
 	gjs-commonjs \
-	js
+	js \
+	test
 
 DIST_SUBDIRS = \
 	gjs-commonjs \
-	js
+	js \
+	test
 
 EXTRA_DIST = \
 	autogen.sh \
