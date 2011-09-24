@@ -124,7 +124,8 @@ function join (promises) {
 }
 
 if (exports) {
+    exports.Promise = Promise;
+    exports.Deferred = Deferred;
     exports.defer = defer;
     exports.join = join;
-    exports.Promise = Promise;
 }
