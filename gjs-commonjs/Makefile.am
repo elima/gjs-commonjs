@@ -86,7 +86,8 @@ gjs_commonjs_CFLAGS = \
 	$(AM_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(MOZJS_CFLAGS) \
-	$(GJS_CFLAGS)
+	$(GJS_CFLAGS) \
+	-L./
 
 gjs_commonjs_LDADD = \
 	$(GLIB_LIBS) \
